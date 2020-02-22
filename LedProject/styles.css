@@ -1,0 +1,164 @@
+body{
+  margin: 0;
+}
+
+#title-section{
+  background-color: #79bac1;
+  font-family: 'Pacifico', cursive;
+  color: #512b58;
+  margin: 0;
+  text-align: center;
+
+}
+
+.page-heading{
+  font-size: 8rem;
+}
+
+.heading-emoji{
+  font-size: 6rem;
+}
+
+#title-section h1{
+  margin: 0;
+  padding: 100px 0 100px 0;
+}
+
+
+#controller-section{
+  background-color: #f1f3f4;
+  font-family: 'Poppins', sans-serif;
+  color: #512b58;
+  padding: 50px 0 50px 0;
+}
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  margin-top: 10px;
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 60%; /* Full-width */
+  height: 15px; /* Specified height */
+  background: #79bac1; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: #512b58; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: #512b58; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.led-button-off{
+  text-align: center;
+}
+
+.led-button-div{
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+
+.big-space{
+  margin-bottom: 100px;
+}
+
+.led-button-div.led-button-left{
+  border-right: 1px solid #6c5b7b;
+}
+
+.btn-outline-dark{
+  width: 60px;
+  height: 60px;
+  color: #512b58;
+  border-color: #512b58;
+  font-size: 2rem;
+  border-width: thin;
+}
+
+.btn-dark{
+  width: 60px;
+  height: 60px;
+  color: #f1f3f4;
+  background-color: #512b58;
+  border-color: #512b58;
+  font-size: 2rem;
+  border-width: thin;
+}
+
+.btn-dark:hover{
+  color: #512b58;
+  background-color: #f1f3f4;
+}
+
+.btn-outline-dark:hover {
+    color: #f1f3f4;
+    background-color: #512b58;
+    border-color: #512b58;
+}
+
+.btn-dark:active {
+    color: #f1f3f4 !important;
+    background-color: #f1f3f4 !important;
+}
+
+.btn-dark:focus {
+  color: #f1f3f4;
+  background-color: #512b58;
+  border-color: #512b58;
+  box-shadow: 0 0 0 0.2rem rgba(82,88,93,.5);
+}
+
+.second-row{
+  margin-top: 80px;
+}
+
+.divider{
+  padding: 10px 0;
+}
+
+.color-picker{
+  width: 60px;
+  height: 60px;
+  color: #f1f3f4;
+  background-color: #512b58;
+  border-color: #512b58;
+  font-size: 2rem;
+  border-width: thin;
+  border-radius: 4px;
+}
+
+.controller-emoji{
+  font-size: 4rem;
+  text-align: center;
+  margin: 80px 0 80px 0;
+}
+
+#footer{
+  background-color: #2a7886;
+  color: #512b58;
+  text-align: center;
+  padding: 40px 0 40px 0;
+}

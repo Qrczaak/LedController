@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Led Control</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b0c95c32d0.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <section id="title-section">
+      <div>
+        <h1 class="page-heading">
+          Led Controller
+        </h1>
+      </div>
+    </section>
+
+    <iframe name="formDestination" hidden></iframe>
+
+    <section id="controller-section">
+      <div class="container">
+
+
+
+        <div class="row">
+          <div class="col-12 led-button-off">
+            <h5>Wyłącz</h5>
+            <form action="http://192.168.1.110/off" method="GET" target="formDestination">
+              <button type="submit" class="btn btn-outline-dark"><i class="fas fa-power-off"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <hr class="divider" />
+        <hr class="divider" />
+        <div class="row big-space">
+          <div class="col-4 led-button-div led-button-left">
+            <p>Wybierz kolor</p>
+            <input type="color" id="color-picker" name="color-picker" value="#79bac1" class="color-picker custom">
+          </div>
+          <div class="col-4 led-button-div led-button-left">
+            <p>Jasność</p>
+            <form action="http://192.168.1.110/brightness" method="GET" target="formDestination">
+              <div>
+                <button type="submit" class="btn btn-dark"><i class="fas fa-rainbow"></i></button>
+              </div>
+              <div class="slidecontainer">
+                <input name="brightness" type="range" min="1" max="80" value="40" class="slider" id="brightnessSlider">
+                <p id="brightnessValue">40</p>
+              </div>
+            </form>
+          </div>
+          <div class="col-4 led-button-div">
+            <p>Szybkość</p>
+            <form action="http://192.168.1.110/color-delay" method="GET" target="formDestination">
+              <div>
+                <button type="submit" class="btn btn-dark"><i class="fas fa-rainbow"></i></button>
+              </div>
+              <div class="slidecontainer">
+                <input name="delay" type="range" min="1" max="1000" value="500" class="slider" id="delaySlider">
+                <p id="delayValue">40</p>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <div class="row second-row">
+          <div class="col-4 led-button-div led-button-left">
+            <p>Tęcza</p>
+            <form action="http://192.168.1.110/rainbow" method="GET" target="formDestination">
+              <button type="submit" class="btn btn-dark"><i class="fas fa-rainbow"></i></button>
+            </form>
+          </div>
+          <div class="col-4 led-button-div led-button-left">
+            <p>Tęcza 2</p>
+            <form action="http://192.168.1.110/rainbow-strip" method="GET" target="formDestination">
+              <button type="submit" class="btn btn-dark"><i class="fas fa-rainbow"></i></button>
+            </form>
+          </div>
+          <div class="col-4 led-button-div">
+            <p>Płomień</p>
+            <form action="http://192.168.1.110/fire" method="GET" target="formDestination">
+              <button type="submit" class="btn btn-dark"><i class="fas fa-fire"></i></button>
+            </form>
+          </div>
+        </div>
+        <hr class="divider" />
+        <div class="row">
+          <div class="col-4 led-button-div led-button-left">
+            <p>Pełny kolor</p>
+            <form action="http://192.168.1.110/solid-color" method="GET" target="formDestination">
+              <div>
+                <button type="submit" class="btn btn-dark" id="color-picker-2"  onClick="onColorPicker()"><i class="fas fa-palette"></i></button>
+              </div>
+              <div class="hidden-color-picker">
+                  <input type="text" hidden="true" name="col" id="hidden-input-solid-color"/>
+              </div>
+            </form>
+          </div>
+          <div class="col-4  led-button-div led-button-left">
+            <p>Płynący kolor</p>
+            <form action="http://192.168.1.110/color" method="GET" target="formDestination">
+              <div>
+                <button type="submit" class="btn btn-dark" id="color-picker-2"  onClick="onColorPicker()"><i class="fas fa-palette"></i></button>
+              </div>
+              <div class="hidden-color-picker">
+                  <input type="text" hidden="true" name="col" id="hidden-input-color"/>
+              </div>
+            </form>
+          </div>
+          <div class="col-4 led-button-div">
+            <p>Konfetti</p>
+            <form action="http://192.168.1.110/confetti" method="GET" target="formDestination">
+              <button type="submit" class="btn btn-dark"><i class="fas fa-holly-berry"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <hr class="divider" />
+        <div class="row">
+          <div class="col-4 led-button-div led-button-left">
+            <p>W rytm muzyki</p>
+            <form action="http://192.168.1.110/reactive" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="fas fa-music"></i></button>
+            </form>
+          </div>
+          <div class="col-4  led-button-div led-button-left">
+            <p>Wężyk</p>
+            <form action="http://192.168.1.110/juggle" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="fas fa-water"></i></button>
+            </form>
+          </div>
+          <div class="col-4 led-button-div">
+            <p>Stroboskop</p>
+            <form action="http://192.168.1.110/strobe" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="far fa-lightbulb"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <hr class="divider" />
+        <div class="row">
+          <div class="col-4 led-button-div led-button-left">
+            <p>Śnieżynki</p>
+            <form action="http://192.168.1.110/snow-sparkle" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="far fa-snowflake"></i></button>
+            </form>
+          </div>
+          <div class="col-4  led-button-div led-button-left">
+            <p>Kuleczki</p>
+            <form action="http://192.168.1.110/bouncing-balls" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="fas fa-ellipsis-v"></i></button>
+            </form>
+          </div>
+          <div class="col-4 led-button-div">
+            <p>Meteoryt</p>
+            <form action="http://192.168.1.110/meteor-rain" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="fas fa-meteor"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <hr class="divider" />
+        <div class="row">
+          <div class="col-6 led-button-div led-button-left">
+            <p>Red Blue Green</p>
+            <form action="http://192.168.1.110/rgb-loop" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="fab fa-cloudsmith"></i></button>
+            </form>
+          </div>
+          <div class="col-6  led-button-div">
+            <p>Losowo</p>
+            <form action="http://192.168.1.110/random" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="fas fa-dice-five"></i></button>
+            </form>
+          </div>
+        </div>
+
+
+        <div class="controller-emoji">
+        🎄
+        </div>
+
+        <div class="row">
+          <div class="col-4 led-button-div led-button-left">
+            <p>Red Green</p>
+            <form action="http://192.168.1.110/rb-christmass" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="fab fa-cloudsmith"></i></button>
+            </form>
+          </div>
+          <div class="col-4  led-button-div led-button-left">
+            <p>Red Green 2</p>
+            <form action="http://192.168.1.110/half-rb-christmass" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="fab fa-cloudsmith"></i></button>
+            </form>
+          </div>
+          <div class="col-4 led-button-div">
+            <p>Świąteczny teatr</p>
+            <form action="http://192.168.1.110/theater-run" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="fas fa-ellipsis-v"></i></button>
+            </form>
+          </div>
+        </div>
+        <hr class="divider" />
+        <div class="row">
+          <div class="col-6 led-button-div led-button-left">
+            <p>Świątecztne śnieżynki</p>
+            <form action="http://192.168.1.110/snow-sparkle-christmass" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="far fa-snowflake"></i></button>
+            </form>
+          </div>
+          <div class="col-6  led-button-div">
+            <p>Losowe świąteczne</p>
+            <form action="http://192.168.1.110/random-christmass" method="GET" target="formDestination">
+                <button type="submit" class="btn btn-dark"><i class="fas fa-dice-five"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <hr class="divider"/>
+    </div>
+    </section>
+    <section id="footer">
+      <div>
+        <p>
+          Prepared for Led Controller 🚦 2020.
+        </p>
+      </div>
+    </section>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
