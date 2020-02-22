@@ -7,10 +7,8 @@
 
 //************************************* WIFI ***********************************
 #ifndef STASSID
-#define STASSID "Wifi"
-#define STAPSK  "zibiwodnik"
-//#define STASSID "TPLINK"
-//#define STAPSK  "Ewaspadlazdrzewa"
+#define STASSID "SSID"
+#define STAPSK  "PASSWORD"
 #endif
 
 //***** Konfiguracja WIFI *****
