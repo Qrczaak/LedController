@@ -1,4 +1,5 @@
 # LedController
+Project created for fun in my free time, may be still developing and fixing if it will be possible.
 Reactive Led Strip controlled over WiFi. Components used to create this project: NodeMCU, led strip: WS2812B, microphone.
 
 Microphone was used because one of the modes let's led to blink in music rhytm, however it needs further modifications.
